@@ -1,25 +1,33 @@
-# hello-express
+# eericxu-github-app
 
-A server that serves a webpage, its resources, and some data
+> A GitHub App built with [Probot](https://github.com/probot/probot) that A Probot app
 
+## Setup
 
-## Your Project
+```sh
+# Install dependencies
+npm install
 
-On the front-end,
+# Run the bot
+npm start
+```
 
-- Edit `views/index.html` to change the content of the webpage
-- `public/client.js` is the javacript that runs when you load the webpage
-- `public/style.css` is the styles for `views/index.html`
-- Drag in `assets`, like images or music, to add them to your project
+## Docker
 
-On the back-end,
+```sh
+# 1. Build container
+docker build -t eericxu-github-app .
 
-- your app starts at `server.js`
-- add frameworks and packages in `package.json`
-- safely store app secrets in `.env` (nobody can see this but you and people you invite)
+# 2. Start container
+docker run -e APP_ID=<app-id> -e PRIVATE_KEY=<pem-value> eericxu-github-app
+```
 
-Click `Show` in the header to see your app live. Updates to your code will instantly deploy.
+## Contributing
 
+If you have suggestions for how eericxu-github-app could be improved, or want to report a bug, open an issue! We'd love all and any contributions.
 
-( ᵔ ᴥ ᵔ )
-# eericxu_github_app
+For more, check out the [Contributing Guide](CONTRIBUTING.md).
+
+## License
+
+[ISC](LICENSE) © 2021 eericxu <2681350846@qq.com>

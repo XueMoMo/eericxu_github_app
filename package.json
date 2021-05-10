@@ -1,27 +1,32 @@
 {
-  "//1": "describes your app and its dependencies",
-  "//2": "https://docs.npmjs.com/files/package.json",
-  "//3": "updating this file will download and update your packages",
-  "name": "hello-express",
-  "version": "0.0.1",
-  "description": "A simple Node app built on Express, instantly up and running.",
-  "main": "server.js",
+  "name": "eericxu-github-app",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A Probot app",
+  "author": "eericxu <2681350846@qq.com>",
+  "license": "ISC",
+  "homepage": "https://github.com/XueMoMo/eericxu-github-app",
+  "keywords": [
+    "probot",
+    "github",
+    "probot-app"
+  ],
   "scripts": {
-    "start": "node server.js"
+    "start": "probot run ./index.js",
+    "test": "jest"
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "probot": "^11.0.1"
+  },
+  "devDependencies": {
+    "jest": "^26.6.3",
+    "nock": "^13.0.5",
+    "smee-client": "^1.2.2"
   },
   "engines": {
-    "node": "12.x"
+    "node": ">= 10.13.0"
   },
-  "repository": {
-    "url": "https://glitch.com/edit/#!/hello-express"
-  },
-  "license": "MIT",
-  "keywords": [
-    "node",
-    "glitch",
-    "express"
-  ]
+  "jest": {
+    "testEnvironment": "node"
+  }
 }
