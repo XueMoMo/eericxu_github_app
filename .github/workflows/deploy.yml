@@ -1,0 +1,24 @@
+name: Auto Deploy
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-deploy:
+    if: github.repository == 'XueMoMo/eericxu_github_app'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2.3.4
+
+      - name: Deploy to Glitch
+        uses: hpcodecraft/action-deploy-workspace-to-repo@v2.2
+        env:
+          GITHUB_ACCESS_TOKEN: ${{ secrets.GH_PAGES_KEY }}
+          SRC_FOLDER: out
+          DEST_OWNER: XueMoMo
+          DEST_REPO: xuemomo.github.io
+          DEST_BRANCH: main
